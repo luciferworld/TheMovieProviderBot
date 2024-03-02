@@ -36,7 +36,7 @@ async def myplan(client, message):
     if data and data.get("expiry_time"):
         #expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=data)
         expiry = data.get("expiry_time") 
-        expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
+        expiry_ist = expiry.astimezone(pytz.timezone("Asia/Karachi"))
         expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Karachi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
         # Calculate time difference
         current_time = datetime.datetime.now(pytz.timezone("Asia/Karachi"))
