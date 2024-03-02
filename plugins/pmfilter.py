@@ -1611,7 +1611,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 text="<b>🥳 ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴꜱ\n\n🎉 ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ꜰʀᴇᴇ ᴛʀᴀɪʟ ꜰᴏʀ <u>5 ᴍɪɴᴜᴛᴇs</u> ꜰʀᴏᴍ ɴᴏᴡ !</b>",
                 quote=False,
                 disable_web_page_preview=True,                  
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('✨ ꜰʀᴇᴇ ʟᴏɢᴏ ᴍᴀᴋᴇʀ ✨', url='https://t.me/ChatGPT2112_bot?start=5390385209'))]]))
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('✨ ꜰʀᴇᴇ ʟᴏɢᴏ ᴍᴀᴋᴇʀ ✨', url='https://t.me/ChatGPT2112_bot?start=5390385209')]]))
             return    
 
     elif query.data == "premium_info":
