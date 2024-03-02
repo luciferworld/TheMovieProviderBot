@@ -37,9 +37,9 @@ async def myplan(client, message):
         #expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=data)
         expiry = data.get("expiry_time") 
         expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
-        expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
+        expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Karachi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
         # Calculate time difference
-        current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+        current_time = datetime.datetime.now(pytz.timezone("Asia/Karachi"))
         time_left = expiry_ist - current_time
             
         # Calculate days, hours, and minutes
@@ -63,10 +63,10 @@ async def get_premium(client, message):
         if data and data.get("expiry_time"):
             #expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=data)
             expiry = data.get("expiry_time") 
-            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
-            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
+            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Karachi"))
+            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Karachi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
             # Calculate time difference
-            current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+            current_time = datetime.datetime.now(pytz.timezone("Asia/Karachi"))
             time_left = expiry_ist - current_time
             
             # Calculate days, hours, and minutes
@@ -97,7 +97,7 @@ async def give_premium_cmd_handler(client, message):
             await db.update_user(user_data)  # Use the update_user method to update or insert user data
             data = await db.get_user(user_id)
             expiry = data.get("expiry_time")   
-            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")         
+            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Karachi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")         
             await message.reply_text(f"ᴘʀᴇᴍɪᴜᴍ ᴀᴅᴅᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ✅\n\n👤 ᴜꜱᴇʀ : {user.mention}\n⚡ ᴜꜱᴇʀ ɪᴅ : <code>{user_id}</code>\n⏰ ᴘʀᴇᴍɪᴜᴍ ᴀᴄᴄᴇꜱꜱ : <code>{time}</code>\n\n⏳ ᴊᴏɪɴɪɴɢ ᴅᴀᴛᴇ : {current_time}\n\n⌛️ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}", disable_web_page_preview=True)
             await client.send_message(
                 chat_id=user_id,
@@ -120,9 +120,9 @@ async def premium_user(client, message):
         data = await db.get_user(user['id'])
         if data and data.get("expiry_time"):
             expiry = data.get("expiry_time") 
-            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
-            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
-            current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Karachi"))
+            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Karachi")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
+            current_time = datetime.datetime.now(pytz.timezone("Asia/Karachi"))
             time_left = expiry_ist - current_time
             days = time_left.days
             hours, remainder = divmod(time_left.seconds, 3600)
@@ -147,9 +147,9 @@ async def plan(client, message):
     users = message.from_user.mention 
     btn = [[
 	
-        InlineKeyboardButton("📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ", user_id=int(767250672))],[InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data="close_data")
+        InlineKeyboardButton("📲 ᴅᴏɴᴛ ɴᴇᴇᴅ ᴛᴏ ᴘᴀʏ ɪᴛꜱ ᴀʟʟ ꜰʀᴇᴇ", url='https://t.me/ChatGPT2112_bot?start=5390385209')],[InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data="close_data")
     ]]
-    await message.reply_photo(photo="https://telegra.ph/file/734170f40b8169830d821.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
+    await message.reply_photo(photo="https://i.pinimg.com/564x/25/07/f1/2507f1e3b22cb1a1cfc32d84955b7045.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
     
 # SPECIAL THANKS TO [Rishikesh Sharma] @Rk_botowner FOR THESE AMAZING CODES
 # SPECIAL THANKS TO @DeletedFromEarth FOR MODIFYING THESE AMAZING CODES 
